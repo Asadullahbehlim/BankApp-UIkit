@@ -10,7 +10,6 @@ import UIKit
 class LoginViewController: UIViewController {
     
     let loginView = LoginView()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,23 +18,22 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 }
-    extension LoginViewController {
-        func style() {
-            loginView.translatesAutoresizingMaskIntoConstraints = false
-        }
-        func layout() {
-            view.addSubview(loginView)
-            
-            // Mark : Mark Autolayout Constraint
-            
-            NSLayoutConstraint.activate([
-                        loginView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-                        loginView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
-                        view.trailingAnchor.constraint(equalToSystemSpacingAfter: loginView.trailingAnchor, multiplier: 1)
-                    ])
-            
-        }
-    }
 
+extension LoginViewController {
+    private func style() {
+        view.backgroundColor = .systemBackground
+        loginView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+   private func layout() {
+       view.addSubview(loginView)
+       
+       NSLayoutConstraint.activate([
+        loginView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        loginView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
+        view.trailingAnchor.constraint(equalToSystemSpacingAfter: loginView.trailingAnchor, multiplier: 1)
+       ])
+    }
+}
 
 
