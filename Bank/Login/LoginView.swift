@@ -29,7 +29,7 @@ class LoginView: UIView {
 //    override var intrinsicContentSize: CGSize {
 //        return CGSize(width: 200, height: 200)
 //    }
-//    
+//
 }
 
 extension LoginView {
@@ -73,9 +73,8 @@ extension LoginView {
             stackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1),
             stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 1),
             trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
-            
+
             bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 1)
-        
         ])
         
         dividerView.heightAnchor.constraint(equalToConstant: 2).isActive = true
@@ -93,7 +92,11 @@ extension LoginView: UITextFieldDelegate {
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        return true
+        if textField.text != "" {
+            return true
+        } else {
+            return false
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
