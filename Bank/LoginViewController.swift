@@ -88,21 +88,29 @@ extension LoginViewController {
         }
         
         private func login() {
-            guard let username = username,
-                  let password = password
+        guard let username = username,
+        let password = password
             else {
-                assertionFailure(" Username/password never be blank")
-                return
-            }
-            
+            assertionFailure("username/password should never be nil")
+            return
+           }
+           
             if username.isEmpty || password.isEmpty {
                 configureView(withMessage: "Username / Password Cannot Be Blank ")
                 
             }
-        }
-        private func configureView(withMessage message:  String) {
-                errorMessageLabel.isHidden = false
-                errorMessageLabel.text = message
+            if username == "Kevin" && password == "Kevin123" {
+                signInButton.configuration?.showsActivityIndicator = true
             }
+            else {
+                configureView(withMessage: "Incorrect Username/Password")
+            }
+            
+        }
+        func configureView(withMessage message: String) {
+            errorMessageLabel.isHidden = false
+            errorMessageLabel.text = message
+        }
+        
         }
     
