@@ -96,7 +96,7 @@ extension LoginViewController {
            }
            
             if username.isEmpty || password.isEmpty {
-                configureView(withMessage: "Username / Password Cannot Be Blank ")
+                configureView(withMessage: "Username/Password Cannot Be Blank ")
                 
             }
             if username == "Kevin" && password == "Kevin123" {
