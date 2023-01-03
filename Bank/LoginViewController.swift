@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol LogoutDelegate {
+    func didLogout()
+}
+
+
 protocol LoginViewControllerDelegate: AnyObject {
    func didlogin()
 }
@@ -34,6 +39,11 @@ class LoginViewController: UIViewController {
         layout()
         // Do any additional setup after loading the view.
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        signInButton.configuration?.showsActivityIndicator = false
+    }
+    
 }
 
 extension LoginViewController {
@@ -130,10 +140,11 @@ extension LoginViewController {
             return
            }
            
-            if username.isEmpty || password.isEmpty {
-                configureView(withMessage: "Username/Password Cannot Be Blank ")
-                
-            }
+//            if username.isEmpty || password.isEmpty {
+//                configureView(withMessage: "Username/Password Cannot Be Blank ")
+//
+//            }
+//
             if username == "" && password == "" {
                 signInButton.configuration?.showsActivityIndicator = true
                 delegate?.didlogin()

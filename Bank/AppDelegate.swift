@@ -11,8 +11,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var hasOnboarded = false
     let loginViewController = LoginViewController()
     let onboardingContainerViewController = OnboardingContainerViewController()
+    let dummyViewController = DummyViewController()
        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
            
            window = UIWindow(frame: UIScreen.main.bounds)
@@ -20,25 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            window?.backgroundColor = .systemBackground
            loginViewController.delegate = self
            onboardingContainerViewController.delegate = self
-        
+           dummyViewController.logoutDelegate = self
+           
            window?.rootViewController = loginViewController
+      //     window?.dummyViewController = dummyViewController
         //   window?.rootViewController = onboardingContainerViewController
            return true
        }
 }
 
-extension AppDelegate: LoginViewControllerDelegate {
-    func didlogin() {
-     setRootViewController(onboardingContainerViewController)
-    }
-}
-    
-extension AppDelegate: OnboardingContainerViewControllerdelegate {
-    func didfinishOnboarding() {
-        print("Test Login1")
-    }
-    
-}
 
 extension AppDelegate {
     func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
@@ -56,4 +48,33 @@ extension AppDelegate {
                           animations: nil,
                           completion: nil)
     }
+}
+
+
+extension AppDelegate: LogoutDelegate {
+    func didLogout() {
+        setRootViewController(loginViewController)
+    }
+}
+
+extension AppDelegate: LoginViewControllerDelegate {
+    func didlogin() {
+        
+        if hasOnboarded {
+            setRootViewController(dummyViewController)
+        }
+        else {
+            setRootViewController(onboardingContainerViewController)
+        }
+        
+        }
+    }
+
+    
+extension AppDelegate: OnboardingContainerViewControllerdelegate {
+    func didfinishOnboarding() {
+        hasOnboarded = true
+     setRootViewController(dummyViewController)
+    }
+    
 }

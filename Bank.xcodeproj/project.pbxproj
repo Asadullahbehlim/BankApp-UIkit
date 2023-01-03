@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4103F0EB295C226600419E4F /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4103F0EA295C226600419E4F /* DummyViewController.swift */; };
 		41465912287A8F01001166CC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41465911287A8F01001166CC /* LoginView.swift */; };
 		41602A12287941190049C2D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41602A11287941190049C2D6 /* AppDelegate.swift */; };
 		41602A16287941190049C2D6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41602A15287941190049C2D6 /* LoginViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4103F0EA295C226600419E4F /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		41465911287A8F01001166CC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		41602A0E287941190049C2D6 /* Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41602A11287941190049C2D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				41465911287A8F01001166CC /* LoginView.swift */,
+				4103F0EA295C226600419E4F /* DummyViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41465912287A8F01001166CC /* LoginView.swift in Sources */,
+				4103F0EB295C226600419E4F /* DummyViewController.swift in Sources */,
 				41602A16287941190049C2D6 /* LoginViewController.swift in Sources */,
 				4168282E2946F77100AC303D /* OnboardingViewController.swift in Sources */,
 				41602A12287941190049C2D6 /* AppDelegate.swift in Sources */,
