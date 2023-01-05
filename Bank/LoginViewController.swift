@@ -11,7 +11,6 @@ protocol LogoutDelegate {
     func didLogout()
 }
 
-
 protocol LoginViewControllerDelegate: AnyObject {
    func didlogin()
 }

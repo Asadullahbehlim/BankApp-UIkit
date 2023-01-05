@@ -26,11 +26,13 @@ class LoginView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+// Req, init is used when we create a view using Storyboard,
+
 //    override var intrinsicContentSize: CGSize {
-//        return CGSize(width: 200, height: 200)
+//        return CGSize(width: 100, height: 200)
 //    }
 //
-}
+    }
 
 extension LoginView {
     
@@ -61,7 +63,7 @@ extension LoginView {
     
     func layout() {
         
-        // addSubview(UIStackView)
+       //  addSubview(UIStackView)
         stackView.addArrangedSubview(usernameTextField)
         stackView.addArrangedSubview(dividerView)
         stackView.addArrangedSubview(passwordTextField)
