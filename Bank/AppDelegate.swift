@@ -26,13 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            onboardingContainerViewController.delegate = self
            dummyViewController.logoutDelegate = self
          
-           window?.rootViewController = mainViewController
+         //  window?.rootViewController = mainViewController
+           window?.rootViewController = AccountSummaryViewController()
 
-        //   window?.rootViewController = loginViewController
+        // window?.rootViewController = loginViewController
         // window?.dummyViewController = dummyViewController
         // window?.rootViewController = onboardingContainerViewController
            
-           mainViewController.selectedIndex = 1
+           mainViewController.selectedIndex = 2  // To manage default tab of screen
            return true
        }
 }
