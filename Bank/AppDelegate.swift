@@ -25,15 +25,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            loginViewController.delegate = self
            onboardingContainerViewController.delegate = self
            dummyViewController.logoutDelegate = self
-         
-         //  window?.rootViewController = mainViewController
-           window?.rootViewController = AccountSummaryViewController()
-
-       //  window?.rootViewController = loginViewController
-        // window?.dummyViewController = dummyViewController
-        // window?.rootViewController = onboardingContainerViewController
            
-           mainViewController.selectedIndex = 2  // To manage default tab of screen
+           let vc = mainViewController
+           vc.setStatusBar()
+
+           UINavigationBar.appearance().isTranslucent = false
+           UINavigationBar.appearance().backgroundColor = appColor
+         
+          window?.rootViewController = vc
+          // window?.rootViewController = AccountSummaryViewController()
+         //  window?.rootViewController = loginViewController
+         // window?.dummyViewController = dummyViewController
+         // window?.rootViewController = onboardingContainerViewController
+           
+           mainViewController.selectedIndex = 0  // To manage default tab of screen
            return true
        }
 }
