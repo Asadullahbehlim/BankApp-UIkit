@@ -28,22 +28,22 @@ class AccountSummaryViewController: UIViewController {
         
         let savings = AccountSummaryCell.ViewModel(accountType: .Banking,
                                                             accountName: "Basic Savings",
-                                                   balance: 29008.95)
+                                                   balance: 78658.95)
         let chequing = AccountSummaryCell.ViewModel(accountType: .Banking,
                                                     accountName: "No-Fee All-In Chequing",
-                                                    balance: 17562.44)
+                                                    balance: 34562.44)
         let visa = AccountSummaryCell.ViewModel(accountType: .CreditCard,
                                                        accountName: "Visa Avion Card",
-                                                       balance: 412.83)
+                                                       balance: 4127.83)
         let masterCard = AccountSummaryCell.ViewModel(accountType: .CreditCard,
                                                        accountName: "Student Mastercard",
-                                                       balance: 50.83)
+                                                       balance: 5980.83)
         let investment1 = AccountSummaryCell.ViewModel(accountType: .Investment,
                                                        accountName: "Tax-Free Saver",
-                                                       balance: 2000.00)
+                                                       balance: 20000.00)
         let investment2 = AccountSummaryCell.ViewModel(accountType: .Investment,
                                                        accountName: "Growth Fund",
-                                                       balance: 15000.00)
+                                                       balance: 25000.00)
 
         accounts.append(savings)
         accounts.append(chequing)
@@ -67,7 +67,7 @@ extension AccountSummaryViewController {
             let group = DispatchGroup()
             
             // Testing - random number selection
-            let userId = String(Int.random(in: 1..<4))
+         //   let userId = String(Int.random(in: 1..<4))
             
       //      fetchProfile(group: group, userId: userId)
        //     fetchAccounts(group: group, userId: userId)
