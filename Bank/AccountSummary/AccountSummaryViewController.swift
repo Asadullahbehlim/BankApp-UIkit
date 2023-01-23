@@ -22,9 +22,17 @@ class AccountSummaryViewController: UIViewController {
     var headerView = AccountSummaryHeaderView(frame: .zero)
     var tableView = UITableView()
     
+    lazy var logOutBarButton : UIBarButtonItem = {
+        let barButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
+        barButton.tintColor = .label
+        return barButton
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
         
         let savings = AccountSummaryCell.ViewModel(accountType: .Banking,
                                                             accountName: "Basic Savings",
@@ -56,15 +64,19 @@ class AccountSummaryViewController: UIViewController {
 
 extension AccountSummaryViewController {
     
-    
     private func setup() {
         setupTableView()
         setupTableHeaderView()
         fetchData()
+        setupNavigationBar()
     }
     
+    func setupNavigationBar() {
+          navigationItem.rightBarButtonItem = logOutBarButton
+      }
+    
     private func fetchData() {
-            let group = DispatchGroup()
+       //     let group = DispatchGroup()
             
             // Testing - random number selection
          //   let userId = String(Int.random(in: 1..<4))
@@ -72,9 +84,9 @@ extension AccountSummaryViewController {
       //      fetchProfile(group: group, userId: userId)
        //     fetchAccounts(group: group, userId: userId)
             
-            group.notify(queue: .main) {
+        //    group.notify(queue: .main) {
       //          self.reloadView()
-            }
+          //  }
         }
     
     private func setupTableView() {
@@ -133,6 +145,10 @@ extension AccountSummaryViewController: UITableViewDelegate {
         
     }
 }
-
+extension AccountSummaryViewController {
+    @objc func logoutTapped(sender: UIButton) {
+        NotificationCenter.default.post(name: .logout, object: nil)  // Great Alternate of delegate but can't use everywhere
+    }
+}
 
 
