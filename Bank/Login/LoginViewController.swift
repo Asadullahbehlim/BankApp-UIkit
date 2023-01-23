@@ -154,7 +154,7 @@ extension LoginViewController {
             }
             
         }
-        func configureView(withMessage message: String) {
+       private func configureView(withMessage message: String) {
             errorMessageLabel.isHidden = false
             errorMessageLabel.text = message
         }

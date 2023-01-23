@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let onboardingContainerViewController = OnboardingContainerViewController()
     let dummyViewController = DummyViewController()
     let mainViewController = MainViewController()
+   
     
        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
            
@@ -25,22 +26,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            loginViewController.delegate = self
            onboardingContainerViewController.delegate = self
            dummyViewController.logoutDelegate = self
+        
            
-           let vc = mainViewController
-           vc.setStatusBar()
-
-           UINavigationBar.appearance().isTranslucent = false
-           UINavigationBar.appearance().backgroundColor = appColor
-         
-          window?.rootViewController = vc
+           displayLogin()
+           return true
+       } // Func Application Closed
+    
+    
+          private func displayLogin() {
+               setRootViewController(loginViewController)
+           }
+           
+          private func displayNextScreen() {
+              if LocalState.hasOnboarded {
+                  PrepMainView()
+                  setRootViewController(mainViewController)
+              } else {
+                  setRootViewController(onboardingContainerViewController)
+              }
+             
+           }
+           
+          private func PrepMainView() {
+              mainViewController.setStatusBar()
+              UINavigationBar.appearance().isTranslucent = false
+              UINavigationBar.appearance().backgroundColor = appColor
+               
+           }
+//
+//           let vc = mainViewController
+//           vc.setStatusBar()
+//
+//           UINavigationBar.appearance().isTranslucent = false
+//           UINavigationBar.appearance().backgroundColor = appColor
+//
+//            window?.rootViewController = vc
           // window?.rootViewController = AccountSummaryViewController()
          //  window?.rootViewController = loginViewController
          // window?.dummyViewController = dummyViewController
          // window?.rootViewController = onboardingContainerViewController
            
-           mainViewController.selectedIndex = 0  // To manage default tab of screen
-           return true
-       }
+       //    mainViewController.selectedIndex = 0  // To manage default tab of screen
+          // return true
+       
 }
 
 
@@ -72,19 +100,13 @@ extension AppDelegate: LogoutDelegate {
 extension AppDelegate: LoginViewControllerDelegate {
     func didlogin()
     {
-        if LocalState.hasOnboarded {
-            setRootViewController(dummyViewController)
-        }
-        else {
-            setRootViewController(onboardingContainerViewController)
-        }
-
-        }
+        displayNextScreen()
     }
-    
+}
 extension AppDelegate: OnboardingContainerViewControllerdelegate {
     func didfinishOnboarding() {
         LocalState.hasOnboarded = true
+        PrepMainView()
      setRootViewController(dummyViewController)
     }
     

@@ -99,6 +99,7 @@
 			children = (
 				41465911287A8F01001166CC /* LoginView.swift */,
 				4103F0EA295C226600419E4F /* DummyViewController.swift */,
+				41602A15287941190049C2D6 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -156,7 +157,6 @@
 				41CB1D33296416300005033B /* Utilities */,
 				4146590F287A8B1A001166CC /* Files */,
 				41602A11287941190049C2D6 /* AppDelegate.swift */,
-				41602A15287941190049C2D6 /* LoginViewController.swift */,
 				41602A1F2879411B0049C2D6 /* Info.plist */,
 				41A4AA05296F36D4007DE547 /* MainViewController.swift */,
 			);

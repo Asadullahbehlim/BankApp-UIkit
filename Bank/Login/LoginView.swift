@@ -36,7 +36,7 @@ class LoginView: UIView {
 
 extension LoginView {
     
-    func style() {
+   private func style() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .secondarySystemBackground
         
@@ -61,7 +61,7 @@ extension LoginView {
         clipsToBounds = true
     }
     
-    func layout() {
+   private func layout() {
         
        //  addSubview(UIStackView)
         stackView.addArrangedSubview(usernameTextField)
