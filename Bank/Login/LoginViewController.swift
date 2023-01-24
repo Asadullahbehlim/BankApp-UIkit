@@ -163,7 +163,7 @@ extension LoginViewController {
 //
 //            }
 //
-            if username == "" && password == "" {
+            if username == "Asad" && password == "Asad123" {
                 signInButton.configuration?.showsActivityIndicator = true
                 delegate?.didlogin()
                 
@@ -176,8 +176,20 @@ extension LoginViewController {
        private func configureView(withMessage message: String) {
             errorMessageLabel.isHidden = false
             errorMessageLabel.text = message
+            shakeButton()
         }
         
+        private func shakeButton() {
+            let animation = CAKeyframeAnimation()
+            animation.keyPath = "position.x"
+            animation.values = [0,10,-10,10,0]
+            animation.keyTimes = [ 0, 0.16, 0.50, 0.83, 1]
+            animation.duration = 0.5
+            
+            animation.isAdditive = true
+            signInButton.layer.add(animation, forKey: "shake")
+        }
+    
 }
     
 // MARK: - Animations
