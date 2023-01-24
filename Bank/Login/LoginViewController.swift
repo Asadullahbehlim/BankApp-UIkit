@@ -32,17 +32,30 @@ class LoginViewController: UIViewController {
         return loginView.passwordTextField.text
     }
     
+    //animation
+    var leadingEdgeOnScreen: CGFloat = 16
+    var leadingEdgeOffScreen: CGFloat = -1000
+    
+    var titleLeadingAnchor: NSLayoutConstraint?
+    var subtitleleadingAnchor: NSLayoutConstraint?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
         layout()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animate()
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         signInButton.configuration?.showsActivityIndicator = false
     }
-    
+   
 }
 
 extension LoginViewController {
@@ -85,12 +98,16 @@ extension LoginViewController {
        view.addSubview(errorMessageLabel)
        view.addSubview(subtitleLabel)
       
-       //titleLabel
-       
+    
+       // Title
        NSLayoutConstraint.activate([
-        subtitleLabel.topAnchor.constraint(equalToSystemSpacingBelow: titleLabel.bottomAnchor, multiplier: 3),
-        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+           subtitleLabel.topAnchor.constraint(equalToSystemSpacingBelow: titleLabel.bottomAnchor, multiplier: 3),
+           titleLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
        ])
+           
+       titleLeadingAnchor = titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
+       titleLeadingAnchor?.isActive = true
+       
        
        //LoginView
        NSLayoutConstraint.activate([
@@ -120,6 +137,8 @@ extension LoginViewController {
         subtitleLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
         subtitleLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
        ])
+       subtitleleadingAnchor = subtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
+       subtitleleadingAnchor?.isActive = true
     }
 }
 
@@ -161,3 +180,24 @@ extension LoginViewController {
         
 }
     
+// MARK: - Animations
+extension LoginViewController {
+    private func animate() {
+        let animator1 = UIViewPropertyAnimator(duration: 2, curve: .easeInOut) {
+            self.titleLeadingAnchor?.constant = self.leadingEdgeOnScreen
+        //    self.subtitleleadingAnchor?.constant = self.leadingEdgeOnScreen
+            self.view.layoutIfNeeded()
+            
+            
+     }
+        animator1.startAnimation()
+        
+        let animator2 = UIViewPropertyAnimator(duration: 2, curve: .easeInOut) {
+            self.subtitleleadingAnchor?.constant = self.leadingEdgeOnScreen
+            self.view.layoutIfNeeded()
+
+        }
+        animator2.startAnimation(afterDelay: 2)
+    }
+
+}
