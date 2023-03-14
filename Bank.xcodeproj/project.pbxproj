@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4103F0EB295C226600419E4F /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4103F0EA295C226600419E4F /* DummyViewController.swift */; };
+		410E7AFB2980013C00E5B0AB /* ShakeyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E7AFA2980013C00E5B0AB /* ShakeyBellView.swift */; };
 		411E8FA6297E4F2C004D040A /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E8FA5297E4F2C004D040A /* CurrencyFormatterTests.swift */; };
 		4121D49A297C03EA00A0AE18 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121D499297C03EA00A0AE18 /* CurrencyFormatter.swift */; };
 		4141EE3A297F0F350004325C /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4141EE39297F0F350004325C /* NSNotificationName.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		4103F0EA295C226600419E4F /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
+		410E7AFA2980013C00E5B0AB /* ShakeyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeyBellView.swift; sourceTree = "<group>"; };
 		411E8F9C297E4D11004D040A /* BankUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		411E8FA5297E4F2C004D040A /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
 		4121D499297C03EA00A0AE18 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		410E7AF92980010500E5B0AB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				410E7AFA2980013C00E5B0AB /* ShakeyBellView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		411E8F9D297E4D11004D040A /* BankUnitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +165,7 @@
 		41602A10287941190049C2D6 /* Bank */ = {
 			isa = PBXGroup;
 			children = (
+				410E7AF92980010500E5B0AB /* Components */,
 				417E082C296FF0AE001A4FDC /* AccountSummary */,
 				41465910287A8EE0001166CC /* Login */,
 				415BDCF7289634AB00FC5467 /* Onboarding */,
@@ -313,6 +324,7 @@
 				41A4AA06296F36D4007DE547 /* MainViewController.swift in Sources */,
 				417E082E296FF1E2001A4FDC /* AccountSummaryViewController.swift in Sources */,
 				41F11A4E296C09C2006E1153 /* UIViewController+Util.swift in Sources */,
+				410E7AFB2980013C00E5B0AB /* ShakeyBellView.swift in Sources */,
 				41A2FE1329465EB3009370F3 /* OnboardingContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

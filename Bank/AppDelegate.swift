@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //           UINavigationBar.appearance().backgroundColor = appColor
 //
 //            window?.rootViewController = vc
-          // window?.rootViewController = AccountSummaryViewController()
+          //
          //  window?.rootViewController = loginViewController
          // window?.dummyViewController = dummyViewController
          // window?.rootViewController = onboardingContainerViewController

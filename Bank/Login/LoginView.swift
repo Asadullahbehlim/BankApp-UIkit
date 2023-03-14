@@ -53,8 +53,8 @@ extension LoginView {
         passwordTextField.placeholder = "Password"
         passwordTextField.delegate = self
         passwordTextField.isSecureTextEntry = true
-       passwordTextField.delegate = self
-       passwordTextField.enablePasswordToggle()
+        passwordTextField.delegate = self
+        passwordTextField.enablePasswordToggle()
         dividerView.translatesAutoresizingMaskIntoConstraints = false
         dividerView.backgroundColor = .secondarySystemFill
         
