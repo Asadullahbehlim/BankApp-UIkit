@@ -26,6 +26,8 @@
 		4168E5DD29C09C3E0030A5B9 /* AccountSummaryViewController+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168E5DC29C09C3E0030A5B9 /* AccountSummaryViewController+Networking.swift */; };
 		417E082E296FF1E2001A4FDC /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E082D296FF1E2001A4FDC /* AccountSummaryViewController.swift */; };
 		4187CEEF2966CF450013FAD5 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187CEEE2966CF450013FAD5 /* LocalState.swift */; };
+		419A6D3029C1BCE2007896B4 /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419A6D2F29C1BCE2007896B4 /* ProfileTests.swift */; };
+		419A6D3229C1C0F2007896B4 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419A6D3129C1C0F2007896B4 /* AccountTests.swift */; };
 		41A2FE1329465EB3009370F3 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A2FE1229465EB3009370F3 /* OnboardingContainerViewController.swift */; };
 		41A4AA06296F36D4007DE547 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A4AA05296F36D4007DE547 /* MainViewController.swift */; };
 		41F11A4E296C09C2006E1153 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F11A4D296C09C2006E1153 /* UIViewController+Util.swift */; };
@@ -64,6 +66,8 @@
 		4168E5DC29C09C3E0030A5B9 /* AccountSummaryViewController+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Networking.swift"; sourceTree = "<group>"; };
 		417E082D296FF1E2001A4FDC /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 		4187CEEE2966CF450013FAD5 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
+		419A6D2F29C1BCE2007896B4 /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
+		419A6D3129C1C0F2007896B4 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		41A2FE1229465EB3009370F3 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		41A4AA05296F36D4007DE547 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		41F11A4D296C09C2006E1153 /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
@@ -98,7 +102,8 @@
 		411E8F9D297E4D11004D040A /* BankUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				411E8FA5297E4F2C004D040A /* CurrencyFormatterTests.swift */,
+				419A6D2E29C1BC97007896B4 /* Utils */,
+				419A6D2D29C1BC80007896B4 /* AccountSummary */,
 			);
 			path = BankUnitTests;
 			sourceTree = "<group>";
@@ -191,6 +196,23 @@
 				415819962976A4EA00D3BBCD /* Header */,
 			);
 			path = AccountSummary;
+			sourceTree = "<group>";
+		};
+		419A6D2D29C1BC80007896B4 /* AccountSummary */ = {
+			isa = PBXGroup;
+			children = (
+				419A6D2F29C1BCE2007896B4 /* ProfileTests.swift */,
+				419A6D3129C1C0F2007896B4 /* AccountTests.swift */,
+			);
+			path = AccountSummary;
+			sourceTree = "<group>";
+		};
+		419A6D2E29C1BC97007896B4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				411E8FA5297E4F2C004D040A /* CurrencyFormatterTests.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		41CB1D33296416300005033B /* Utilities */ = {
@@ -309,6 +331,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				411E8FA6297E4F2C004D040A /* CurrencyFormatterTests.swift in Sources */,
+				419A6D3229C1C0F2007896B4 /* AccountTests.swift in Sources */,
+				419A6D3029C1BCE2007896B4 /* ProfileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
