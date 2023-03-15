@@ -54,7 +54,7 @@ extension ShakeyBellView {
         addSubview(buttonView)
         //ImageView Constraint
         NSLayoutConstraint.activate([
-            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: -5),
             imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 27),
             imageView.widthAnchor.constraint(equalToConstant: 27),

@@ -22,6 +22,8 @@
 		41608F872972D0F0005C283E /* AccountSummaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41608F862972D0F0005C283E /* AccountSummaryHeader.swift */; };
 		41608F892972D170005C283E /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41608F882972D170005C283E /* AccountSummaryHeaderView.xib */; };
 		4168282E2946F77100AC303D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168282D2946F77100AC303D /* OnboardingViewController.swift */; };
+		4168E5DB29C093860030A5B9 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168E5DA29C093860030A5B9 /* Date+Utils.swift */; };
+		4168E5DD29C09C3E0030A5B9 /* AccountSummaryViewController+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168E5DC29C09C3E0030A5B9 /* AccountSummaryViewController+Networking.swift */; };
 		417E082E296FF1E2001A4FDC /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E082D296FF1E2001A4FDC /* AccountSummaryViewController.swift */; };
 		4187CEEF2966CF450013FAD5 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187CEEE2966CF450013FAD5 /* LocalState.swift */; };
 		41A2FE1329465EB3009370F3 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A2FE1229465EB3009370F3 /* OnboardingContainerViewController.swift */; };
@@ -58,6 +60,8 @@
 		41608F862972D0F0005C283E /* AccountSummaryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeader.swift; sourceTree = "<group>"; };
 		41608F882972D170005C283E /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
 		4168282D2946F77100AC303D /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		4168E5DA29C093860030A5B9 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		4168E5DC29C09C3E0030A5B9 /* AccountSummaryViewController+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Networking.swift"; sourceTree = "<group>"; };
 		417E082D296FF1E2001A4FDC /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 		4187CEEE2966CF450013FAD5 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		41A2FE1229465EB3009370F3 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 			children = (
 				410E7AF92980010500E5B0AB /* Components */,
 				417E082C296FF0AE001A4FDC /* AccountSummary */,
+				4168E5DC29C09C3E0030A5B9 /* AccountSummaryViewController+Networking.swift */,
+				417E082D296FF1E2001A4FDC /* AccountSummaryViewController.swift */,
 				41465910287A8EE0001166CC /* Login */,
 				415BDCF7289634AB00FC5467 /* Onboarding */,
 				41CB1D33296416300005033B /* Utilities */,
@@ -183,7 +189,6 @@
 			children = (
 				415819972976A53700D3BBCD /* Cells */,
 				415819962976A4EA00D3BBCD /* Header */,
-				417E082D296FF1E2001A4FDC /* AccountSummaryViewController.swift */,
 			);
 			path = AccountSummary;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				4121D499297C03EA00A0AE18 /* CurrencyFormatter.swift */,
 				4141EE39297F0F350004325C /* NSNotificationName.swift */,
 				4141EE3B297F12DB0004325C /* UITextField+SecureToggle.swift */,
+				4168E5DA29C093860030A5B9 /* Date+Utils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -316,6 +322,8 @@
 				4103F0EB295C226600419E4F /* DummyViewController.swift in Sources */,
 				41602A16287941190049C2D6 /* LoginViewController.swift in Sources */,
 				4141EE3C297F12DB0004325C /* UITextField+SecureToggle.swift in Sources */,
+				4168E5DB29C093860030A5B9 /* Date+Utils.swift in Sources */,
+				4168E5DD29C09C3E0030A5B9 /* AccountSummaryViewController+Networking.swift in Sources */,
 				4168282E2946F77100AC303D /* OnboardingViewController.swift in Sources */,
 				4121D49A297C03EA00A0AE18 /* CurrencyFormatter.swift in Sources */,
 				415819992976A57D00D3BBCD /* AccountSummaryCell.swift in Sources */,
