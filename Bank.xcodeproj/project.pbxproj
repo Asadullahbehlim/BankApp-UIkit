@@ -31,6 +31,8 @@
 		41A2FE1329465EB3009370F3 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A2FE1229465EB3009370F3 /* OnboardingContainerViewController.swift */; };
 		41A4AA06296F36D4007DE547 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A4AA05296F36D4007DE547 /* MainViewController.swift */; };
 		41F11A4E296C09C2006E1153 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F11A4D296C09C2006E1153 /* UIViewController+Util.swift */; };
+		41F5E0A329C2F48D00CE0D59 /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5E0A229C2F48D00CE0D59 /* SkeletonLoadable.swift */; };
+		41F5E0A529C2FE4500CE0D59 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5E0A429C2FE4500CE0D59 /* SkeletonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		41A2FE1229465EB3009370F3 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		41A4AA05296F36D4007DE547 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		41F11A4D296C09C2006E1153 /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
+		41F5E0A229C2F48D00CE0D59 /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
+		41F5E0A429C2FE4500CE0D59 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				415819982976A57D00D3BBCD /* AccountSummaryCell.swift */,
+				41F5E0A229C2F48D00CE0D59 /* SkeletonLoadable.swift */,
+				41F5E0A429C2FE4500CE0D59 /* SkeletonCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -350,6 +356,8 @@
 				4168E5DD29C09C3E0030A5B9 /* AccountSummaryViewController+Networking.swift in Sources */,
 				4168282E2946F77100AC303D /* OnboardingViewController.swift in Sources */,
 				4121D49A297C03EA00A0AE18 /* CurrencyFormatter.swift in Sources */,
+				41F5E0A529C2FE4500CE0D59 /* SkeletonCell.swift in Sources */,
+				41F5E0A329C2F48D00CE0D59 /* SkeletonLoadable.swift in Sources */,
 				415819992976A57D00D3BBCD /* AccountSummaryCell.swift in Sources */,
 				4141EE3A297F0F350004325C /* NSNotificationName.swift in Sources */,
 				41602A12287941190049C2D6 /* AppDelegate.swift in Sources */,
