@@ -21,7 +21,8 @@ class AccountSummaryViewController: UIViewController {
     var accountCellViewModels: [AccountSummaryCell.ViewModel] = []
     var tableView = UITableView()
     let headerView = AccountSummaryHeaderView(frame: .zero)
-
+    let refreshControl = UIRefreshControl()
+    
     lazy var logOutBarButton : UIBarButtonItem = {
         let barButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
         barButton.tintColor = .label
@@ -32,22 +33,22 @@ class AccountSummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        setupNavigationBar()
+        
     }
-    func setupNavigationBar() {
-        navigationItem.rightBarButtonItem = logOutBarButton
-    }
+    
 }
 
 extension AccountSummaryViewController {
     
     private func setup() {
+        setupNavigationBar()
         setupTableView()
         setupTableHeaderView()
-        fetchDataAndLoadViews()
+        setupRefreshControl()
+        fetchData()
+        
     }
 
-    
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -75,6 +76,16 @@ extension AccountSummaryViewController {
         headerView.frame.size = size
         
         tableView.tableHeaderView = headerView
+    }
+    // setupNavigationBar
+    func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = logOutBarButton
+    }
+    
+    func setupRefreshControl() {
+        refreshControl.tintColor = .white
+        refreshControl.addTarget(self, action: #selector(refreshContent), for: .valueChanged)
+        tableView.refreshControl = refreshControl
     }
     
 }
@@ -106,29 +117,39 @@ extension AccountSummaryViewController: UITableViewDelegate {
 
 // MARK: - Networking
 extension AccountSummaryViewController {
-    private func fetchDataAndLoadViews() {
+    private func fetchData() {
+        let group = DispatchGroup()
         
-        fetchProfile(forUserId: "1") { result in
+        //Testing Refresh Control For Demo Purpose
+        let userId = String(Int.random(in: 1..<4))
+        
+        group.enter()
+        fetchProfile(forUserId: userId) { result in
             switch result {
             case .success(let profile):
                 self.profile = profile
                 self.configureTableHeaderView(with: profile)
-                self.tableView.reloadData()
-            case .failure(let error):
+                case .failure(let error):
                 print(error.localizedDescription)
             }
+            group.leave()
         }
-
-        fetchAccounts(forUserId: "1") { result in
+          
+        group.enter()
+        fetchAccounts(forUserId: userId) { result in
                     switch result {
                     case .success(let accounts):
                         self.accounts = accounts
                         self.configureTableCells(with: accounts)
-                        self.tableView.reloadData()
-                    case .failure(let error):
+                        case .failure(let error):
                         print(error.localizedDescription)
                     }
-                }
+            group.leave()
+        }
+        group.notify(queue: .main) {
+            self.tableView.reloadData()
+            self.tableView.refreshControl?.endRefreshing()
+        }
     }
     
     private func configureTableHeaderView(with profile: Profile) {
@@ -148,10 +169,17 @@ extension AccountSummaryViewController {
       }
 }
 
+// MARK: - ACtions
 extension AccountSummaryViewController {
     @objc func logoutTapped(sender: UIButton) {
         NotificationCenter.default.post(name: .logout, object: nil)  // Great Alternate of delegate but can't use everywhere
     }
+    @objc func refreshContent() {
+        fetchData()
+    }
+    
 }
+
+
 
 
